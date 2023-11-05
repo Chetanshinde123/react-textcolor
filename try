@@ -1,0 +1,29 @@
+import { useState } from "react";
+
+function TextColor(){
+
+    let [state, setState] = useState("Select the color");
+  
+  let red = () => {
+    setState("red")
+  }
+  
+
+    return(
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <h2>Changing the color on function...!</h2>
+            <button>
+
+            <select onClick={red}>
+                <option>{state}</option>
+                <option >Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Yellow</option>
+            </select>
+            </button>
+        </div>
+    )
+}
+
+export default TextColor;
