@@ -1,0 +1,74 @@
+import { useState } from "react";
+
+function Image() {
+  let [state, setState] = useState(
+    "https://i.pinimg.com/564x/aa/c7/f3/aac7f36041a8e993db4d6de6c7a2478e.jpg"
+  );
+
+  let Lonely = () => {
+    setState(
+      "https://i.pinimg.com/564x/42/11/d6/4211d65aff4f8e1b4de7753a9393caaa.jpg"
+    );
+  };
+
+  let happy = () => {
+    setState(
+      "https://i.pinimg.com/564x/ff/dd/5a/ffdd5ab498f933df2714b5a74daca9a3.jpg"
+    );
+  };
+
+  let update = () => {
+    setState(
+      "https://i.pinimg.com/564x/53/2e/3a/532e3a9c08366f83fe1954a412a295bc.jpg"
+    );
+  };
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <img
+        // src="https://i.pinimg.com/564x/42/11/d6/4211d65aff4f8e1b4de7753a9393caaa.jpg"
+        src={state}
+        width="300"
+        height="300"
+        alt=""
+      />
+      <br />
+      <button
+        style={{
+          margin: "15px",
+          textAlign: "center",
+          width: "100px",
+          boxShadox: "0 0 10x black"
+        }}
+        onClick={happy}
+      >
+        Happiness
+      </button>
+
+      <button
+        style={{
+          margin: "15px",
+          textAlign: "center",
+          width: "100px",
+          boxShadox: "0 0 10x black"
+        }}
+        onClick={update}
+      >
+        Angry
+      </button>
+
+      <button
+        style={{
+          margin: "15px",
+          textAlign: "center",
+          width: "100px",
+          boxShadox: "0 0 10x black"
+        }}
+        onClick={Lonely}
+      >
+        Lonely
+      </button>
+    </div>
+  );
+}
+export default Image;
