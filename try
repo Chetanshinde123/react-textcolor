@@ -1,29 +1,32 @@
-import { useState } from "react";
+import "./Nav.css";
+//import Image from "../Images/image";
 
-function TextColor(){
 
-    let [state, setState] = useState("Select the color");
-  
-  let red = () => {
-    setState("red")
-  }
-  
+function Nav({ state,setState }) {
+  return (
+    <div className="navcontainer">
+      <div className="title">
+        <h2>My Portfolio</h2>
+      </div>
 
-    return(
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <h2>Changing the color on function...!</h2>
-            <button>
+      <div className="menu">
+        <a href="">Home</a>
+        <a href="" >Resume</a>
+        <a href=""> Profile</a>
+        <a href="">Login</a>
 
-            <select onClick={red}>
-                <option>{state}</option>
-                <option >Red</option>
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Yellow</option>
-            </select>
+        {state
+          ? <button
+              onClick={() => {
+                setState (false);
+              }}
+            >
+              Log Out
             </button>
-        </div>
-    )
+          : null}
+      </div>
+    </div>
+  );
 }
 
-export default TextColor;
+export default Nav;
